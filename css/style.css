@@ -30,3 +30,14 @@
     --fuente-principal: 'Helvetica Neue Cond. Bold', sans-serif;
     --fuente-secundaria: 'Marion Regular', serif;
 }
+
+* {
+    background: var(--color-principal-azul);
+}
+
+header {
+    display: flex;
+    width: max-content;
+    height: 700px;
+    background-color: #93B6EE;
+}
