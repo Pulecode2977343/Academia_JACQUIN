@@ -1,0 +1,42 @@
+:root {
+    /* Paleta de Colores */
+    --color-principal-azul: #223F61;
+    --color-acento-azul: #93B6EE;
+    --color-acento-naranja: #E78C3B;
+    --color-blanco-neutro: #F3F2EE;
+
+    /* Tonalidades del Azul */
+    --azul-ligero: #BCD0E7;
+    --azul-claro: #9EACCC;
+    --azul-suave: #8199B1;
+    --azul-normal: #698197;
+    --azul-medio: #526A7E;
+    --azul-oscuro: #3B5267;
+    --azul-profundo: #2C465E;
+    --azul-intenso: #193149;
+
+    /* Tonalidades del Naranja */
+    --naranja-ligero: #FFE0BD;
+    --naranja-claro: #FCD8A2;
+    --naranja-suave: #F8C689;
+    --naranja-normal: #F3B470;
+    --naranja-medio: #EFA259;
+    --naranja-oscuro: #E78C3B;
+    --naranja-fuerte: #CC7C32;
+    --naranja-intenso: #B26C28;
+    --naranja-oscuro-intenso: #985C1F;
+
+    /* Tipografía */
+    --fuente-principal: 'Helvetica Neue Cond. Bold', sans-serif;
+    --fuente-secundaria: 'Marion Regular', serif;
+}
+
+* {
+    background: var(--color-principal-azul);
+}
+
+header {
+    width: 100%;
+    height: 300px;
+    background: var(--azul-claro);
+}
