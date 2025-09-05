@@ -4,6 +4,7 @@
     --color-acento-azul: #93B6EE;
     --color-acento-naranja: #E78C3B;
     --color-blanco-neutro: #F3F2EE;
+    --color-humo-gris: #CDCDCD;
 
     /* Tonalidades del Azul */
     --azul-ligero: #BCD0E7;
@@ -33,10 +34,59 @@
 
 * {
     background: var(--color-principal-azul);
+    margin: 0;
 }
 
 header {
-    width: 100%;
-    height: 300px;
-    background: var(--azul-claro);
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    color: aliceblue;
+}
+
+.container-logo {
+    height: 160px;
+    width: 90%;
+    padding: 60px 0 0 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.key:hover {
+    fill:var(--color-humo-gris);
+}
+
+.menu-icon {
+    height: 200px;
+    width: 90%;
+    padding: 0 350px 0 0;
+    display: flex;
+    justify-content:right;
+}
+
+.icon {
+    height: 40px;
+    padding: 30px;
+    fill: var(--azul-ligero);
+    justify-content:center;
+    align-items:center;
+}
+
+
+.icon:hover {
+    fill: #EFA259;
+    stroke: var(--naranja-medio);
+}
+
+
+@media (max-width:700px) {
+    header {
+        flex-direction: column;
+    }
 }
