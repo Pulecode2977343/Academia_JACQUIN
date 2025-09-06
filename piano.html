@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Piano Interactivo</title>
+	<style>
+		body { background: #222; color: #fff; font-family: Arial, sans-serif; }
+		.piano {
+			display: flex;
+			justify-content: center;
+			align-items: flex-end;
+			height: 300px;
+			margin-top: 50px;
+		}
+		.key {
+			width: 40px;
+			height: 180px;
+			margin: 1px;
+			background: white;
+			border: 1px solid #333;
+			border-radius: 0 0 8px 8px;
+			box-shadow: 0 2px 8px #0006;
+			position: relative;
+			cursor: pointer;
+			z-index: 1;
+		}
+		.key.black {
+			width: 28px;
+			height: 120px;
+			background: black;
+			position: absolute;
+			left: 28px;
+			top: 0;
+			z-index: 2;
+			margin-left: -14px;
+			box-shadow: 0 2px 8px #000a;
+		}
+		.key:active, .key:hover {
+			background: #e0e0e0;
+		}
+		.key.black:active, .key.black:hover {
+			background: #444;
+		}
+		.piano-container {
+			position: relative;
+			width: 420px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Piano Interactivo</h1>
+	<div class="piano-container">
+		<div class="piano" id="piano">
+			<!-- Teclas blancas -->
+			<div class="key" data-note="C"></div>
+			<div class="key" data-note="D"></div>
+			<div class="key" data-note="E"></div>
+			<div class="key" data-note="F"></div>
+			<div class="key" data-note="G"></div>
+			<div class="key" data-note="A"></div>
+			<div class="key" data-note="B"></div>
+		</div>
+		<!-- Teclas negras -->
+		<div style="position: absolute; top: 0; left: 0; width: 100%; height: 120px; pointer-events: none;">
+			<div class="key black" data-note="C#" style="left: 38px; pointer-events: auto;"></div>
+			<div class="key black" data-note="D#" style="left: 78px; pointer-events: auto;"></div>
+			<div class="key black" data-note="F#" style="left: 158px; pointer-events: auto;"></div>
+			<div class="key black" data-note="G#" style="left: 198px; pointer-events: auto;"></div>
+			<div class="key black" data-note="A#" style="left: 238px; pointer-events: auto;"></div>
+		</div>
+	</div>
+	<script>
+		// Frecuencias de las notas
+		const notes = {
+			'C': 261.63,
+			'C#': 277.18,
+			'D': 293.66,
+			'D#': 311.13,
+			'E': 329.63,
+			'F': 349.23,
+			'F#': 369.99,
+			'G': 392.00,
+			'G#': 415.30,
+			'A': 440.00,
+			'A#': 466.16,
+			'B': 493.88
+		};
+
+		// Inicializar contexto de audio
+		const AudioContext = window.AudioContext || window.webkitAudioContext;
+		const audioCtx = new AudioContext();
+
+		function playNote(note) {
+			const osc = audioCtx.createOscillator();
+			osc.type = 'sine';
+			osc.frequency.value = notes[note];
+			const gain = audioCtx.createGain();
+			gain.gain.value = 0.1;
+			osc.connect(gain);
+			gain.connect(audioCtx.destination);
+			osc.start();
+			setTimeout(() => {
+				osc.stop();
+			}, 350);
+		}
+
+		// Evento para reproducir sonido al pasar el mouse
+		document.querySelectorAll('.key').forEach(key => {
+			key.addEventListener('mouseenter', e => {
+				const note = key.getAttribute('data-note');
+				playNote(note);
+			});
+		});
+	</script>
+</body>
+</html>
+
+<!--Listo, tienes un piano interactivo en piano.html que reproduce sonidos al pasar el mouse sobre cada tecla (sin hacer clic).
+
+Explicación para integrar funciones sonoras en otros proyectos:
+
+Se utiliza la Web Audio API (AudioContext) para generar sonidos.
+Cada nota tiene una frecuencia asignada.
+Al detectar el evento mouseenter sobre una tecla, se llama a la función playNote(note) que crea un oscilador, lo conecta a la salida de audio y reproduce el sonido por unos milisegundos.
+Puedes copiar la función playNote y el objeto notes a cualquier otro proyecto, y usar el evento mouseenter en cualquier elemento para generar sonidos al pasar el mouse.
