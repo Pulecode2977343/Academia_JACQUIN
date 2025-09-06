@@ -49,28 +49,6 @@
 }
 
 
-.menu-icon {
-    height: 40px;
-    padding: 30px;
-    float: right;
-    fill: var(--azul-ligero);
-}
-.key:hover {
-    fill:var(--color-humo-gris);
-}
-
-
-.icon {
-    height: 40px;
-    padding: 30px;
-    fill: var(--color-acento-naranja);
-}
-
-
-.icon:hover {
-    fill: var(--naranja-medio);
-    stroke: var(--naranja-medio);
-}
 
 
 
