@@ -3,14 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/">
     <title>JACQUIN Academia Musical</title>
+    <style>
+        /* Responsividad adicional para elementos internos */
+        @media (max-width: 900px) {
+            .container-logo {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 40px 0 0 40px;
+            }
+            header {
+                min-height: 120px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 1em;
+                padding: 0 2vw;
+            }
+            .container-logo {
+                padding: 20px 0 0 10px;
+                width: 100%;
+            }
+            header {
+                min-height: 80px;
+                padding: 0 10px;
+            }
+            .logo {
+                width: 120px !important;
+                height: auto !important;
+            }
+            .menu-icon {
+                height: 32px !important;
+                width: 32px !important;
+                padding: 0 !important;
+                display: inline-block !important;
+            }
+            .icon {
+                height: 32px !important;
+                width: 32px !important;
+                padding: 0 !important;
+                display: inline-block !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="container-logo">
             <div>
-                <a href="/index.html">
+                
+            </div>
+            <nav><a href="/index.html">
                     <svg class="logo"  width="193" height="140" viewBox="0 0 193 140" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path class="key" data-note="F" d="M62 3.72162C62 -0.503782 68.662 -0.119983 71.041 0.151817C71.525 0.207117 71.873 0.621018 71.873 1.10832V26.2571C71.873 26.8094 72.321 27.2571 72.873 27.2571H74C74.552 27.2571 75 27.7048 75 28.2571V51C75 51.5523 74.552 52 74 52H63C62.448 52 62 51.5636 62 51.0113C62 44.5448 62 8.40262 62 3.72162Z" fill="#FFFEFF"/>
                         <path class="key" data-note="G" d="M80.25 2.99997C80.25 2.44767 80.697 2.00416 81.248 2.05086C83.07 2.20566 86.75 2.83107 86.75 5.35707C86.75 8.25237 86.75 22.7998 86.75 26.7481C86.75 27.3004 87.198 27.7381 87.75 27.7381H89C89.552 27.7381 90 28.1858 90 28.7381V48C90 48.5523 89.552 49 89 49H78C77.448 49 77 48.5523 77 48V28.7381C77 28.1858 77.448 27.7381 78 27.7381H79.25C79.802 27.7381 80.25 27.2904 80.25 26.7381V2.99997Z" fill="#FFFEFF"/>
@@ -46,9 +93,7 @@
                         </defs>
                     </svg>
                 </a>
-            </div>
-            <nav class="menu-icon">
-                <a href="/index.html">
+                <a href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="icon" viewBox="0 0 16 16">
                         <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4z"/>
                     </svg>
@@ -78,6 +123,7 @@
         </div>
     </header>
     <main>
+
     </main>
     <footer>
 
