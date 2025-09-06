@@ -40,6 +40,7 @@
 header {
     min-height: 200px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
@@ -84,9 +85,20 @@ a {
     stroke: var(--naranja-medio);
 }
 
+.demarcation {
+    height: 765px;
+    background-color: var(--azul-ligero);
+    display: flex;
+}
 
-@media (max-width:700px) {
-    header {
-        flex-direction: column;
-    }
+.menu-content {
+    height: 765px;
+    width: 50%;
+    display: flex;
+    position: absolute;
+    left: 49.4%;
+    background-color: var(--color-acento-naranja);
+    border-radius: 8px;
+    margin-left: 10px;
+    
 }
